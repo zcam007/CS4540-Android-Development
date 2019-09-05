@@ -1,5 +1,4 @@
 package com.homework1
-import java.util.ArrayList
 
 interface Subject{
     fun attach(o:Observer)

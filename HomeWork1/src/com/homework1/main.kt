@@ -28,13 +28,16 @@ package com.homework1
 //        NewsLetterPublisher.subscribe(hector)
 //        NewsLetterPublisher.subscribe(letty)
     for (i in 0..20) {
-        if(i>3){
+        if(i==4){
             mike.unsubscribe()
             esmerelda.unsubscribe()
+            println("\nMike and Esmerelda has unsubscribed!!\n")
         }
-        if(i>10){
+        if(i==11){
             kevin.unsubscribe()
             hector.unsubscribe()
+            println("\nKevin and Hector has unsubscribed!!\n")
+
         }
         NewsLetterPublisher.notifyUpdate("Exciting news! We have raised $i million dollars!");
 //         NewsLetterPublisher.notifyUpdate("Hello This is second message");

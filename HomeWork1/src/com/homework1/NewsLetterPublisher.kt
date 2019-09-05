@@ -2,19 +2,19 @@ package com.homework1
 import java.util.ArrayList
 
 interface Subject{
-    fun subscribe(o:Observer)
-    fun unsubscribe(o:Observer)
+    fun attach(o:Observer)
+    fun detach(o:Observer)
     fun notifyUpdate(message:String)
 }
 
+//Singleton class
 object NewsLetterPublisher:Subject {
     private val observers = ArrayList<Observer>()
 
-    override fun subscribe(o: Observer) {
+    override fun attach(o: Observer) {
       observers.add(o);
     }
-
-    override fun unsubscribe(o: Observer) {
+    override fun detach(o: Observer) {
        observers.remove(o)
     }
     override fun notifyUpdate(message:String) {

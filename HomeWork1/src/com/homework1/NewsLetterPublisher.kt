@@ -2,26 +2,28 @@ package com.homework1
 import java.util.ArrayList
 
 interface Subject{
-    fun attach(o:Observer)
-    fun detach(o:Observer)
+    fun subscribe(o:Observer)
+    fun unsubscribe(o:Observer)
     fun notifyUpdate(message:String)
 }
 
 object NewsLetterPublisher:Subject {
     private val observers = ArrayList<Observer>()
 
-    override fun attach(o: Observer) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun subscribe(o: Observer) {
+      observers.add(o);
     }
 
-    override fun detach(o: Observer) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun unsubscribe(o: Observer) {
+       observers.remove(o)
     }
     override fun notifyUpdate(message:String) {
-        println("hello")
+        for (o in observers) {
+            o.update(message)
+        }
     }
     init {
-        println("Initializing with object: $this")
+        println("********Publisher Initialized********")
     }
 
     fun print() = println("Printing with object: $this")

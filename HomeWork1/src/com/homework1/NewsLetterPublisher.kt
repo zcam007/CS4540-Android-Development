@@ -22,7 +22,7 @@ object NewsLetterPublisher:Subject {
         }
     }
     init {
-        println("********Publisher Initialized********")
+        println("******** NewsLetter Publisher Initialized ********")
     }
 
     fun print() = println("Printing with object: $this")

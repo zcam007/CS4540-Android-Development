@@ -7,11 +7,11 @@ package com.homework1
     fun main()
     {
         test();
-        val mike=Subscriber(NewsLetterPublisher);
-        val kevin=Subscriber(NewsLetterPublisher);
-        val esmerelda=Subscriber(NewsLetterPublisher);
-        val hector=Subscriber(NewsLetterPublisher);
-        val letty=Subscriber(NewsLetterPublisher);
+        val mike=Subscriber(NewsLetterPublisher,"Mike");
+        val kevin=Subscriber(NewsLetterPublisher,"Kevin");
+        val esmerelda=Subscriber(NewsLetterPublisher,"Esmerelda");
+        val hector=Subscriber(NewsLetterPublisher,"Hector");
+        val letty=Subscriber(NewsLetterPublisher,"Letty");
             mike.subscribe();
             kevin.subscribe();
             esmerelda.subscribe();
@@ -27,16 +27,16 @@ package com.homework1
 //        NewsLetterPublisher.subscribe(esmerelda)
 //        NewsLetterPublisher.subscribe(hector)
 //        NewsLetterPublisher.subscribe(letty)
-    for (i in 0..20) {
+    for (i in 1..20) {
         if(i==4){
             mike.unsubscribe()
             esmerelda.unsubscribe()
-            println("\nMike and Esmerelda has unsubscribed!!\n")
+          //  println("\nMike and Esmerelda has unsubscribed!!\n")
         }
         if(i==11){
             kevin.unsubscribe()
             hector.unsubscribe()
-            println("\nKevin and Hector has unsubscribed!!\n")
+          //  println("\nKevin and Hector has unsubscribed!!\n")
 
         }
         NewsLetterPublisher.notifyUpdate("Exciting news! We have raised $i million dollars!");

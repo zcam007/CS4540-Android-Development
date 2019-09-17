@@ -39,7 +39,7 @@ package com.homework1
           //  println("\nKevin and Hector has unsubscribed!!\n")
 
         }
-        NewsLetterPublisher.notifyUpdate("Exciting news! We have raised $i million dollars!");
+        NewsLetterPublisher.notifyObservers("Exciting news! We have raised $i million dollars!");
 //         NewsLetterPublisher.notifyUpdate("Hello This is second message");
 //
     }

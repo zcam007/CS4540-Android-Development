@@ -3,7 +3,7 @@ package com.homework1
 interface Subject{
     fun attach(o:Observer)
     fun detach(o:Observer)
-    fun notifyUpdate(message:String)
+    fun notifyObservers(message:String)
     fun setState()
 }
 
@@ -17,7 +17,7 @@ object NewsLetterPublisher:Subject {
     override fun detach(o: Observer) {
        observers.remove(o)
     }
-    override fun notifyUpdate(message:String) {
+    override fun notifyObservers(message:String) {
         for (o in observers) {
             o.update(message)
         }

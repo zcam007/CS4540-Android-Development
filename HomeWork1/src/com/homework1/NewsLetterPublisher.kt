@@ -4,12 +4,13 @@ interface Subject{
     fun attach(o:Observer)
     fun detach(o:Observer)
     fun notifyUpdate(message:String)
+    fun setState()
 }
 
 //Singleton class
 object NewsLetterPublisher:Subject {
-    private val observers = ArrayList<Observer>()
-
+    private var observers = ArrayList<Observer>()
+    private var x=0;
     override fun attach(o: Observer) {
       observers.add(o);
     }
@@ -21,6 +22,10 @@ object NewsLetterPublisher:Subject {
             o.update(message)
         }
     }
+    override fun setState() {
+        x++
+    }
+
     init {
         println("******** NewsLetter Publisher Initialized ********")
     }
